@@ -1,0 +1,357 @@
+<!--
+  * Seraph theme 1.0 by : seraphinush
+  *
+  * strictly no removing of credits, leave at least one link to my repo
+  * you cannot use this as your base code
+  * no theme redistribution otherwise through my repo
+  *
+  * revision log :
+  *   2016.05.04 : started theme design
+  *   2016.05.05 : edited post type and finalization
+  *   2020.09.09 : updated for repost on github repository
+-->
+
+<html>
+
+<head>
+
+  <title>Theme 02, Seraph</title>
+  
+  <!-- variables -->
+  <meta name="color:Theme primary" content="#D7BEA7" />
+  <meta name="color:Theme secondary" content="#B5D48D" />
+  <meta name="color:Theme tertiary" content="#CDDCC3" />
+  <meta name="color:Post title" content="#FFF" />
+  <meta name="color:Text" content="#000" />
+  <meta name="color:Box" content="#FFF" />
+
+  <meta name="color:Bold" content="#B675FF" />
+  <meta name="color:Italics" content="#404040" />
+  <meta name="color:Underlined" content="#404040" />
+
+  <meta name="text:Font size" content="12px" />
+
+  <meta name="text:Link 1" content="Link 1" />
+  <meta name="text:Link 1 url" content="/" />
+  <meta name="text:Link 1 background" content="res/link.png" />
+
+  <meta name="text:Link 2" content="Link 2" />
+  <meta name="text:Link 2 url" content="/" />
+  <meta name="text:Link 2 background" content="res/link.png" />
+
+  <meta name="text:Link 3" content="Link 3" />
+  <meta name="text:Link 3 url" content="/" />
+  <meta name="text:Link 3 background" content="res/link.png" />
+
+  <meta name="text:Link 4" content="Link 4" />
+  <meta name="text:Link 4 url" content="/" />
+  <meta name="text:Link 4 background" content="res/link.png" />
+
+  <meta name="text:Link 5" content="Link 5" />
+  <meta name="text:Link 5 url" content="/" />
+  <meta name="text:Link 5 background" content="res/link.png" />
+
+  <meta name="text:Link 6" content="Link 6" />
+  <meta name="text:Link 6 url" content="/" />
+  <meta name="text:Link 6 background" content="res/link.png" />
+
+  <meta name="text:Link 7" content="Link 7" />
+  <meta name="text:Link 7 url" content="/" />
+  <meta name="text:Link 7 background" content="res/link.png" />
+
+  <meta name="text:Link 8" content="Link 8" />
+  <meta name="text:Link 8 url" content="/" />
+  <meta name="text:Link 8 background" content="res/link.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var nav = document.getElementById("nav")
+      $(document).click(function (e) {
+
+        if ($("#menu").is(e.target)) {
+          nav.style.display = nav.style.display == 'block' ? 'none' : 'block'
+        }
+        else {
+          nav.style.display = nav.style.display == 'block' ? 'none' : null
+        }
+      })
+
+      $(document).scroll(function (e) {
+        nav.style.display = nav.style.display == 'block' ? 'none' : null
+      })
+    });
+  </script>
+
+  <script>
+    const THEMES = {
+      'default': ['#D7BEA7', '#B5D48D', '#CDDCC3'],
+      'red': ['#FF6666', '#FF97AF', '#FFCCE5'],
+      'blue': ['#66B2FF', '#99CCFF', "#CCE5FF"],
+      'purple': ['#B675FF', '#CC99FF', '#E5CCFF']
+    }
+
+    function set_theme(type) {
+      document.documentElement.style.setProperty('--color-primary', THEMES[type][0])
+      document.documentElement.style.setProperty('--color-secondary', THEMES[type][1])
+      document.documentElement.style.setProperty('--color-tertiary', THEMES[type][2])
+      document.documentElement.style.setProperty('--color-bold', THEMES[type][0])
+    }
+
+    function set_dark() {
+      document.body.style.backgroundImage = 'url(res/background_dark.png)'
+      document.documentElement.style.setProperty('--color-box', '#777')
+      document.documentElement.style.setProperty('--color-text', '#CCC')
+    }
+
+    function set_white() {
+      document.body.style.backgroundImage = 'url(res/background.png)'
+      document.documentElement.style.setProperty('--color-box', '#FFF')
+      document.documentElement.style.setProperty('--color-text', '#444')
+    }
+  </script>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- credits -->
+  <div id="cr">
+    <a href="index.html">
+      <img src="res/name.png" width="55px" height="55px" />
+    </a>
+  </div>
+
+</head>
+
+<body>
+
+  <!-- sidebar -->
+  <div id="sidebar">
+    <img id="menu" class="icon" src="res/menu.png" />
+    <a href="#"><img class="icon" src="res/home.png" /></a>
+    <a href="#"><img class="icon" src="res/ask.png" /></a>
+    <a href="#"><img class="icon" src="res/archive.png" /></a>
+    <br /><br /><br /><br /><br />
+
+    <!-- pagination -->
+    <!-- {PreviousPage} -->
+    <a href="#"><img class="icon" src="res/prev.png" /></a>
+    <br />
+    <!-- {CurrentPage} of {TotalPages} -->
+    <p>1 of 1</p>
+    <br />
+    <!-- {NextPage} -->
+    <a href=""><img class="icon" src="res/next.png" /></a>
+  </div>
+
+  <!-- menu -->
+  <div id="nav">
+    <div id="header">
+      <img src="res/name.png" /><br />seraphinush
+    </div>
+
+    <div class="links" onclick="set_theme('default')">
+      <a href="#"><p class="linkdesc">Default theme</p></a>
+    </div>
+    <div class="links" onclick="set_theme('red')">
+      <a href="#"><p class="linkdesc">Strawberry</p></a>
+    </div>
+    <div class="links" onclick="set_theme('blue')">
+      <a href="#"><p class="linkdesc">Sky</p></a>
+    </div>
+    <div class="links" onclick="set_theme('purple')">
+      <a href="#"><p class="linkdesc">Grape</p></a>
+    </div>
+    <br /><br />
+    <div class="links" onclick="set_dark()">
+      <a href="#"><p class="linkdesc">Dark theme</p></a>
+    </div>
+    <div class="links" onclick="set_white()">
+      <a href="#"><p class="linkdesc">White theme</p></a>
+    </div>
+    <div class="links">
+      <a href="#"><p class="linkdesc">link 7</p></a>
+    </div>
+    <div class="links"><a href="#"><p class="linkdesc">link 8</p></a>
+    </div>
+  </div>
+
+  <!-- post types -->
+  <!-- writing -->
+  <div class="box">
+    <div class="h1">Theme 02, Seraph</div>
+    <p>
+      Seraph theme 1.0 by: seraphinush<br />
+      <br />
+      * strictly no removing of credits, leave at least one link to my repo<br />
+      * you cannot use this as your base code<br />
+      * no theme redistribution otherwise through my repo<br />
+      <br />
+      features :<br />>
+      * up to 8 customizable links with individual background images<br />
+      <br />
+      revision log :<br />
+      * 2016.05.04 : started theme design<br />
+      * 2016.05.05 : edited post type and finalization<br />
+      * 2020.09.09 : updated for repost on github repository<br />
+      <br />
+      <a href="theme.txt">theme</a>
+    </p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- quote -->
+  <div class="box">
+    <div class="quote">"Let justice be done though the heavens fall"</div>
+    <div class="quotesource">— Unknown</div>
+    <p>Additional comments</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- photo / photoset -->
+  <div class="box">
+    <div class="photoset"><img src="" /></div>
+    <p>Additional comments</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- question -->
+  <div class="box">
+    <div class="ask"><span>Seraph asked :<br /></span>
+      <p>If a tree fell in a forest...</p>
+    </div>
+    <p>Does it make a sound?</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- audio -->
+  <div class="box">
+    <div class="albumimg"><img src="{AlbumArtURL}" width="80px" height="80px" /></div>
+    <div class="trackid">Track: </div>
+    <div class="trackid">Artist: </div>
+    <p>Additional comments</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- video -->
+  <div class="box">
+    <center>
+      <!-- sample video -->
+      <div style="background-color: #000">
+        <iframe width="400" height="300" src="https://www.youtube.com/embed/YBGLlfkJaLw" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    <p>Additional comments</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- link -->
+  <div class="box">
+    <div class="linkimg"><a href="{URL}"><img src="{Thumbnail-HighRes}" /></a></div>
+    <div class="trackid"><a href="{URL}">Host</a></div>
+    <div class="trackid"><a href="{Target}">Title</a></div>
+    <p>Additional comments</p>
+    <!-- info box -->
+    <div class="info">
+      <a href="#" style="color:#3B3BB9">10</a><span>&nbsp;&nbsp;</span>
+      <span>May 4th, 2016</span>
+      <span>&nbsp;&nbsp;</span>
+      <a href="#">via</a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="#" title="{ReblogRootName}">source</a>
+      <div style="float: right;"><a href="#">reblog</a></div>
+    </div>
+    <div class="tags">
+      <img src="res/tag.svg" />
+      <a href="#">#link</a>
+      <span>&nbsp;</span>
+    </div>
+  </div>
+
+</body>
+
+</html>

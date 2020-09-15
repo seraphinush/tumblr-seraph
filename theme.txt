@@ -1,0 +1,683 @@
+<!--
+  * Seraph theme 1.0 by : seraphinush
+  *
+  * strictly no removing of credits, leave at least one link to my repo
+  * you cannot use this as your base code
+  * no theme redistribution otherwise through my repo
+  *
+  * revision log :
+  *   2016.05.04 : started theme design
+  *   2016.05.05 : edited post type and finalization
+  *   2020.09.09 : updated for repost on github repository
+-->
+
+<html>
+
+<head>
+
+  <title>{Title}</title>
+
+  <Link rel="shortcut icon" href="{Favicon}">
+  <Link rel="alternate" type="application/rss+xml" href="{RSS}">
+  {block:Description}
+  <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+
+  <!-- variables -->
+  <meta name="image:Nav icon" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tumblr.svg/768px-Tumblr.svg.png" />
+
+  <meta name="color:Theme primary" content="#D7BEA7" />
+  <meta name="color:Theme secondary" content="#B5D48D" />
+  <meta name="color:Theme tertiary" content="#CDDCC3" />
+  <meta name="color:Post title" content="#FFF" />
+  <meta name="color:Text" content="#000" />
+  <meta name="color:Box" content="#FFF" />
+
+  <meta name="color:Bold" content="#B675FF" />
+  <meta name="color:Italics" content="#404040" />
+  <meta name="color:Underlined" content="#404040" />
+
+  <meta name="text:Font size" content="12px" />
+
+  <meta name="if:Show Link 1" content="0"/>
+  <meta name="text:Link 1" content="Link 1" />
+  <meta name="text:Link 1 url" content="/" />
+  <meta name="text:Link 1 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 2" content="0"/>
+  <meta name="text:Link 2" content="Link 2" />
+  <meta name="text:Link 2 url" content="/" />
+  <meta name="text:Link 2 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 3" content="0"/> 
+  <meta name="text:Link 3" content="Link 3" />
+  <meta name="text:Link 3 url" content="/" />
+  <meta name="text:Link 3 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 4" content="0"/>
+  <meta name="text:Link 4" content="Link 4" />
+  <meta name="text:Link 4 url" content="/" />
+  <meta name="text:Link 4 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 5" content="0"/>
+  <meta name="text:Link 5" content="Link 5" />
+  <meta name="text:Link 5 url" content="/" />
+  <meta name="text:Link 5 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 6" content="0"/>
+  <meta name="text:Link 6" content="Link 6" />
+  <meta name="text:Link 6 url" content="/" />
+  <meta name="text:Link 6 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 7" content="0"/>
+  <meta name="text:Link 7" content="Link 7" />
+  <meta name="text:Link 7 url" content="/" />
+  <meta name="text:Link 7 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <meta name="if:Show Link 8" content="0"/>
+  <meta name="text:Link 8" content="Link 8" />
+  <meta name="text:Link 8 url" content="/" />
+  <meta name="text:Link 8 background" content="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var nav = document.getElementById("nav")
+      $(document).click(function (e) {
+
+        if ($("#menu").is(e.target)) {
+          nav.style.display = nav.style.display == 'block' ? 'none' : 'block'
+        }
+        else {
+          nav.style.display = nav.style.display == 'block' ? 'none' : null
+        }
+      })
+
+      $(document).scroll(function (e) {
+        nav.style.display = nav.style.display == 'block' ? 'none' : null
+      })
+    });
+  </script>
+
+<!-- styles -->
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    :root {
+      --color-primary: #D7BEA7;
+      --color-secondary: #B5D48D;
+      --color-tertiary: #CDDCC3;
+      --color-title: #FFF;
+      --color-box: #FFF;
+      --color-text: #333;
+      --color-bold: #D7BEA7;
+      --color-italics: #404040;
+      --color-underlined: #404040;
+      --font-size: 12px;
+    }
+
+    a, a:active, a:visited {
+      cursor: pointer;
+      color: #3B3BB9;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    a:hover {
+      cursor: pointer;
+      color: #6666FF;
+      text-decoration: none;
+    }
+
+    b, strong {
+      color: {color:Theme primary};
+    }
+
+    i, em {
+      color: {color:Italics};
+    }
+
+    u {
+      color: {color:Underlined};
+    }
+
+    h1, h2 {
+      margin: 0px;
+      padding: 10px 16px 10px 16px;
+      font-size: 20px;
+      font-family: inconsolata, consolas, courier new, monospace;
+      letter-spacing: 0px;
+      line-height: normal;
+    }
+
+    .h1 {
+      margin: 0px;
+      padding: 20px 16px 20px 16px;
+      font-size: 26px;
+      color: {color:Post title};
+      font-family: inconsolata, consolas, courier new, monospace;
+      background-color: {color:Theme primary};
+      letter-spacing: 0px;
+    }
+
+    p {
+      color: {color:Text};
+    }
+
+    .left {
+      position: relative;
+      float: left;
+    }
+
+    .mid {
+      position: relative;
+      clear: both;
+    }
+
+    .right {
+      position: relative;
+      float: right;
+    }
+
+    ul {
+      list-style-type: circle;
+    }
+
+    ol.notes img {
+      display: inline;
+      padding-right: 5px;
+      padding-top: 3px;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 400px;
+      height: auto;
+    }
+
+    /* templete */
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      margin: 0px;
+      margin-bottom: 200px;
+      overflow-x: hidden;
+      background-attachment: fixed !important;
+      background-image: url('https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/background.png');
+      background-color: {color:Theme primary};
+      font-size: {text:Font size};
+      font-family: inconsolata, consolas, courier new, monospace;
+      line-height: 16px;
+      letter-spacing: 0px;
+    }
+
+    #content {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 840px;
+    }
+
+    .box {
+      position: relative;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: {text:Font size};
+      min-width: 540px;
+      max-width: 840px;
+      background-color: {color:Box};
+      border: 1px solid #C0C0C0;
+      z-index: 1;
+    }
+
+    .box a {
+      -webkit-transition: .30s ease-in;
+    }
+
+    #cr {
+      position: fixed;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      right: 0;
+      bottom: 0;
+      padding: 0px;
+      z-index: 100;
+    }
+
+    /* sidebar */
+
+    #sidebar {
+      position: fixed;
+      margin-top: 0px;
+      margin-left: 0px;
+      top: 0;
+      left: 0;
+      width: 55px;
+      height: 100%;
+      background-color: {color:Theme primary};
+      border-right: 1px solid {color:Theme primary};
+      z-index: 2;
+    }
+
+    #sidebar p {
+      margin: auto;
+      padding: auto;
+      color: #FFF;
+      text-align: center;
+    }
+
+    .icon {
+      cursor: pointer;
+      display: block;
+      margin-bottom: 2px;
+      width: 55px;
+      height: 55px;
+      background-color: {color:Theme secondary};
+      z-index: 3;
+    }
+
+    .icon:hover {
+      background-color: {color:Theme tertiary};
+    }
+
+    #nav {
+      display: none;
+      position: fixed;
+      margin-top: 0px;
+      margin-left: 56px;
+      padding: 180px 20px 30px 20px;
+      top: 0;
+      left: 0;
+      min-width: 140px;
+      width: 400px;
+      max-width: 440px;
+      background-color: {color:Box};
+      border-right: 1px solid {color:Theme primary};
+      text-align: center;
+      vertical-align: middle;
+      z-index: 3;
+    }
+
+    #header {
+      display: block;
+      position: fixed;
+      margin-top: 0px;
+      margin-left: 56px;
+      top: 0;
+      left: 0;
+      min-width: 140px;
+      width: 440px;
+      max-width: 440px;
+      height: 140px;
+      background-color: {color:Theme tertiary};
+      text-align: center;
+      font-size: 20px;
+      color: #FFF;
+      z-index: 4;
+    }
+
+    #header img {
+      margin-top: 15px;
+      width: 74px;
+      border: 3px solid #FFF;
+    }
+
+    .links {
+      position: relative;
+      display: inline-block;
+      margin: 0px 2px 0px 2px;
+      padding: 0px;
+      width: 90px;
+      height: 90px;
+      background-color: {color:Theme primary};
+      background-size: cover;
+      line-height: 90px;
+      font-size: 12px;
+      z-index: 4;
+    }
+
+    .links img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .links a, .links a:active, .links a:visited {
+      color: #FFF;
+    }
+
+    .links p {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      margin: 0px;
+      padding: 0px;
+      width: 90px;
+      height: 90px;
+      line-height: 12pt;
+      color: #FFF;
+      opacity: 0;
+    }
+
+    .links:hover {
+      background-image: none;
+      background-color: {color:Theme secondary};
+    }
+
+    .links:hover p {
+      opacity: 1;
+    }
+
+    /* info */
+
+    .info {
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 1px solid #C0C0C0;
+      font-size: 10px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .info a {
+      color: #333;
+    }
+
+    .tags {
+      margin-top: 8px;
+      font-size: 10px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .tags a {
+      color: #C0C0C0;
+    }
+
+    .tags img {
+      display: inline;
+      width: 8px;
+      filter: invert(48%) sepia(0%) saturate(344%) hue-rotate(257deg) brightness(83%) contrast(85%);
+    }
+
+    /* post type */
+
+    .quote {
+      padding: 20px 16px 20px 16px;
+      font-size: 26px;
+      color: #FFF;
+      background-color: {color:Theme secondary};
+      letter-spacing: 0px;
+    }
+
+    .quote p {
+      margin: 0;
+      line-height: normal;
+      color: #FFF;
+    }
+
+    .quotesource {
+      padding: 12px 16px 12px 16px;
+      font-size: 20px;
+      color: #FFF;
+      text-align: right;
+      background-color: {color:Theme tertiary};
+    }
+
+    .quotesource i {
+      color: #FFF;
+    }
+
+    .ask {
+      padding: 20px 16px 20px 16px;
+      font-size: 26px;
+      color: #FFF;
+      letter-spacing: 0px;
+      background-color: {color:Theme secondary};
+    }
+
+    .ask span {
+      font-size: 20px;
+    }
+
+    .ask p {
+      margin: 12px 5px 0px 5px;
+    }
+
+    .trackid {
+      margin-left: 93px;
+      padding: 12px 16px 12px 16px;
+      font-size: 20px;
+      color: #FFF;
+      background-color: {color:Theme tertiary};
+    }
+
+    .trackid a, .trackid a:active, .trackid a:visited {
+      color: #FFF;
+    }
+
+    .albumimg {
+      position: absolute;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      background: url('https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/music.png') no-repeat;
+      background-color: {color:Theme primary};
+      background-size: cover;
+    }
+
+    .linkimg {
+      position: absolute;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      background: url('https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/link.png') no-repeat;
+      background-color: {color:Theme primary};
+      background-size: cover;
+    }
+
+    .photoset {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      width: 400px;
+      height: auto;
+    }
+
+    {CustomCSS}
+  </style>
+
+  <!-- credits -->
+  <div id="cr">
+    <a href="index.html">
+      <img src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/name.png" width="55px" height="55px" />
+    </a>
+  </div>
+
+</head>
+
+<body>
+
+  <!-- sidebar -->
+  <div id="sidebar">
+    <img id="menu" class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/menu.png" />
+    <a href="/"><img class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/home.png" /></a>
+    <a href="/ask"><img class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/ask.png" /></a>
+    <a href="/archive"><img class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/archive.png" /></a>
+    <br /><br /><br /><br /><br />
+
+    <!-- pagination -->
+    {block:Pagination}
+    {block:PreviousPage}
+    <a href="{PreviousPage}"><img class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/prev.png" /></a>
+    <br />
+    {/block:PreviousPage}
+    <!-- {CurrentPage} of {TotalPages}-->
+    <p>{CurrentPage} of {TotalPages}</p>
+    <br />
+    {block:NextPage}
+    <a href="{NextPage}" title="next">
+      <div class="icon"><img src="http://i.imgur.com/XEnVmwh.png" width="55px" /></div>
+    </a>
+    {/block:NextPage}
+    {/block:Pagination}
+  </div>
+
+  <!-- menu -->
+  <div id="nav">
+    <div id="header">
+      <img src="{image:Nav icon}" /><br />{Title}
+    </div>
+    {block:IfShowLink1}
+    <div class="links" style="background-image:{text:Link 1 background};">
+      <a href="{text:Link 1 url}"><p class="linkdesc">{text:Link 1}</p></a>
+    </div>
+    {/block:IfShowLink1}
+    {block:IfShowLink2}
+    <div class="links" style="background-image:{text:Link 2 background};">
+      <a href="{text:Link 2 url}"><p class="linkdesc">{text:Link 2}</p></a>
+    </div>
+    {/block:IfShowLink2}
+    {block:IfShowLink3}
+    <div class="links" style="background-image:{text:Link 3 background};">
+      <a href="{text:Link 3 url}"><p class="linkdesc">{text:Link 3}</p></a>
+    </div>
+    {/block:IfShowLink3}
+    {block:IfShowLink4}
+    <div class="links" style="background-image:{text:Link 4 background};">
+      <a href="{text:Link 4 url}"><p class="linkdesc">{text:Link 4}</p></a>
+    </div>
+    {/block:IfShowLink4}
+    {block:IfShowLink5}
+    <div class="links" style="background-image:{text:Link 5 background};">
+      <a href="{text:Link 5 url}"><p class="linkdesc">{text:Link 5}</p></a>
+    </div>
+    {/block:IfShowLink5}
+    {block:IfShowLink6}
+    <div class="links" style="background-image:{text:Link 6 background};">
+      <a href="{text:Link 6 url}"><p class="linkdesc">{text:Link 6}</p></a>
+    </div>
+    {/block:IfShowLink6}
+    {block:IfShowLink7}
+    <div class="links" style="background-image:{text:Link 7 background};">
+      <a href="{text:Link 7 url}"><p class="linkdesc">{text:Link 7}</p></a>
+    </div>
+    {/block:IfShowLink7}
+    {block:IfShowLink8}
+    <div class="links" style="background-image:{text:Link 8 background};">
+      <a href="{text:Link 8 url}"><p class="linkdesc">{text:Link 8}</p></a>
+    </div>
+    {/block:IfShowLink8}
+  </div>
+
+  <!-- post types -->
+  {block:Posts}
+  <div class="box">
+    <!-- writing -->
+    {block:Text}
+    <div class="h1">{block:Title}{Title}{/block:Title}</div>
+    <p>{Body}</p>
+    {/block:Text}
+
+    <!-- quote -->
+    {block:Quote}
+    <div class="quote"><p>"{Quote}"</p></div>
+    {block:Source}<div class="quotesource">— {Source}</div>{/block:Source}
+    <p>{Body}</p>
+    {/block:Quote}
+
+    <!-- photo -->
+    {block:Photo}
+    <center><img src="{PhotoURL-HighRes}" width="500px" height="auto" /></center>
+    {block:Caption}<p>{Caption}</p>{/block:Caption}
+    <p>{Body}</p>
+    {/block:Photo}
+
+    <!-- photoset -->
+    {block:Photoset}
+    <div class="photoset" data-layout="{PhotosetLayout}">
+      {block:Photos}
+      <a href="{PhotoURL-HighRes}" target="blank"><img src="{PhotoURL-HighRes}" /></a>
+      {/block:Photos}
+    </div>
+    {block:Caption}<p>{Caption}</p>{/block:Caption}
+    {/block:Photoset}
+
+    <!-- question -->
+    {block:Answer}
+    <div class="ask"><span>{Asker} asked :<br /></span>
+      <p>{Question}</p>
+    </div>
+    <p>{Answer}</p>
+    {/block:Answer}
+
+    <!-- audio -->
+    {block:Audio}
+    <div class="albumimg"><img src="{AlbumArtURL}" width="80px" height="80px" /></div>
+    <div class="trackid">Track: {block:TrackName}{TrackName}{/block:TrackName}</div>
+    <div class="trackid">Artist: {block:Artist}{Artist}{/block:Artist}</div>
+    {block:Caption}<p>{Caption}</p>{/block:Caption}
+    <p>{Body}</p>
+    {/block:Audio}
+
+    <!-- video -->
+    {block:Video}
+    <center>
+      <div style="background-color: #000">{Video-500}</div>
+    </center>
+    {block:Caption}<p>{Caption}</p>{/block:Caption}
+    <p>{Body}</p>
+    {/block:Video}
+
+    <!-- link -->
+    {block:Link}
+    <div class="linkimg"><a href="{URL}"><img src="{Thumbnail-HighRes}" width="80px" height="80px" /></a></div>
+    <div class="trackid"><a href="{URL}">{Host}</a></div>
+    <div class="trackid"><a href="{URL}" target="blank">{Name}</a></div>
+    {block:Caption}<p>{Caption}</p>{/block:Caption}
+    <p>{Description}</p>
+    {/block:Link}
+
+    <!-- info box -->
+    {block:PostNotes}
+    <hr />{PostNotes}
+    {/block:PostNotes}
+    <div class="info">
+      <a href="{Permalink}" style="color:#3B3BB9"><span>{NoteCount}</span></a>
+      <span>&nbsp;&nbsp;</span>
+      {block:Date}
+      <a href="#">{TimeAgo}</a>
+      <span>&nbsp;&nbsp;</span>
+      {/block:Date}
+      {block:RebloggedFrom}
+      <a href="{ReblogParentURL}"> via </a>
+      <span>&nbsp;/&nbsp;</span>
+      <a href="{ReblogRootURL}" title="{ReblogRootName}">source</a>
+      {/block:RebloggedFrom}
+      <div style="float: right;">
+        <a href="{ReblogURL}" target="_blank">reblog</a>
+      </div>
+      {block:HasTags}
+      <div class="tags">
+        <img src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/tag.svg" />
+        {block:Tags}
+        <a href="{TagURL}">#{Tag}</a>
+        <span>&nbsp;</span>
+        {/block:Tags}
+      </div>
+      {/block:HasTags}
+    </div>
+  </div>
+
+</body>
+
+</html>
