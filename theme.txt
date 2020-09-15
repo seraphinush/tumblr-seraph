@@ -37,7 +37,7 @@
   <meta name="color:Italics" content="#404040" />
   <meta name="color:Underlined" content="#404040" />
 
-  <meta name="text:Font size" content="12px" />
+  <meta name="text:Font size" content="12" />
 
   <meta name="if:Show Link 1" content="0"/>
   <meta name="text:Link 1" content="Link 1" />
@@ -211,7 +211,7 @@
       background-attachment: fixed !important;
       background-image: url('https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/background.png');
       background-color: {color:Theme primary};
-      font-size: {text:Font size};
+      font-size: {text:Font size}px;
       font-family: inconsolata, consolas, courier new, monospace;
       line-height: 16px;
       letter-spacing: 0px;
@@ -229,9 +229,9 @@
       margin-top: 40px;
       margin-left: auto;
       margin-right: auto;
-      padding: {text:Font size};
-      min-width: 540px;
-      max-width: 840px;
+      padding: 10px;
+      min-width: 520px;
+      max-width: 820px;
       background-color: {color:Box};
       border: 1px solid #C0C0C0;
       z-index: 1;
@@ -525,9 +525,7 @@
     <p>{CurrentPage} of {TotalPages}</p>
     <br />
     {block:NextPage}
-    <a href="{NextPage}" title="next">
-      <div class="icon"><img src="http://i.imgur.com/XEnVmwh.png" width="55px" /></div>
-    </a>
+    <a href="{NextPage}"><img class="icon" src="https://raw.githubusercontent.com/seraphinush/tumblr-seraph/master/res/next.png" /></a>
     {/block:NextPage}
     {/block:Pagination}
   </div>

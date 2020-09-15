@@ -126,7 +126,7 @@ body {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  padding: var(--font-size);
+  padding: 20px;
   min-width: 540px;
   max-width: 840px;
   background-color: var(--color-box);
